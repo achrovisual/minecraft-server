@@ -1,0 +1,11 @@
+services:
+  minecraft-server:
+    build: .
+    container_name: minecraft-server
+    ports:
+      - "25565:25565"
+    volumes:
+      - /mnt/ssd/services/minecraft/server:/data
+    restart: unless-stopped
+    tty: true           # This creates a "virtual screen"
+    stdin_open: true    # This keeps the "virtual keyboard" plugged in
